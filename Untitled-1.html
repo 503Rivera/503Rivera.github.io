@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poema de Amor</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Poema de Amor</h1>
+        <p id="poema"></p>
+        <button onclick="generarPoema()">Generar Poema</button>
+    </div>
+
+    <script>
+        function generarPoema() {
+            var sustantivos = ["amor", "corazón", "mirada", "suspiro", "beso", "alma"];
+            var adjetivos = ["eterno", "apasionado", "dulce", "ardiente", "inolvidable", "radiante"];
+            var verbos = ["amar", "suspirar", "soñar", "entregarse", "besar", "abrazar"];
+
+            var verso1 = "En el " + adjetivos[Math.floor(Math.random() * adjetivos.length)] + " " + sustantivos[Math.floor(Math.random() * sustantivos.length)];
+            var verso2 = "donde " + verbos[Math.floor(Math.random() * verbos.length)] + " " + sustantivos[Math.floor(Math.random() * sustantivos.length)];
+            var verso3 = "nuestro " + sustantivos[Math.floor(Math.random() * sustantivos.length)] + " " + verbos[Math.floor(Math.random() * verbos.length)];
+            var verso4 = "como " + sustantivos[Math.floor(Math.random() * sustantivos.length)] + " " + verbos[Math.floor(Math.random() * verbos.length)];
+            var verso5 = "tu " + sustantivos[Math.floor(Math.random() * sustantivos.length)] + " " + adjetivos[Math.floor(Math.random() * adjetivos.length)];
+
+            var poema = verso1 + "<br>" + verso2 + "<br>" + verso3 + "<br>" + verso4 + "<br>" + verso5;
+            document.getElementById("poema").innerHTML = poema;
+        }
+    </script>
+</body>
+</html>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f7e4e4; /* Color de fondo suave */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    background-color: #ffe6e6; /* Color de fondo del contenedor */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+h1 {
+    color: #ff4d4d; /* Color rojo para el título */
+}
+
+button {
+    background-color: #ff4d4d; /* Color de fondo del botón */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff3333; /* Cambio de color al pasar el ratón */
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+</style>
